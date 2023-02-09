@@ -1,5 +1,37 @@
-const view_vadibiniko_zona = function()
+const view_vadibiniko_zona = function(param_arr_butai)
 {
+
+const butu_sarasa = ""
+
+for(var i=0;i<param_arr_butai.length; i++)
+{
+    var butas = param_arr_butai[i]
+
+    const div_butas = `<div>
+    <span>area</span>
+    <span>${butas.area}</span>
+    <span>bathrooms</span>
+    <span>${butas.bathrooms}</span>
+    <span>bedrooms</span>
+    <span>${butas.bedrooms}</span>
+    <span>car_spaces</span>
+    <span>${butas.car_spaces}</span>
+    <span>date_seel_from</span>
+    <span>${butas.date_seel_from}</span>
+    <span>living_spaces</span>
+    <span>${butas.living_spaces}</span>
+    <span>location</span>
+    <span>${butas.location}</span>
+    <span>name</span>
+    <span>${butas.name}</span>
+    <span>price</span>
+    <span>${butas.price}</span>
+
+    </div>`
+
+    butu_sarasa += div_butas
+}
+    
     return`<!DOCTYPE html>
     <html lang="en">
     
@@ -35,7 +67,7 @@ const view_vadibiniko_zona = function()
                 margin: 0;
                 background-color: rgb(150,100,100);
                 display: grid;
-                grid-template-colums: auto auto auto;
+                grid-template-columns: auto auto auto;
                 grid-template-rows: auto;
                 place-items: center center;
                 place-content: center center;
@@ -59,7 +91,7 @@ const view_vadibiniko_zona = function()
                 border: 0;
                 margin: 0;
                 display: grid;
-                grid-template-colums: auto ;
+                grid-template-columns: auto ;
                 grid-template-rows: auto;
                 place-items: center center;
                 place-content: center center;
@@ -73,7 +105,7 @@ const view_vadibiniko_zona = function()
                 margin: 0;
                 background-color: rgb(100,100,150);
                 display: grid;
-                grid-template-colums: auto ;
+                grid-template-columns: auto ;
                 grid-template-rows: auto;
                 place-items: center center;
                 place-content: center center;
@@ -138,7 +170,10 @@ const view_vadibiniko_zona = function()
     </main>
     </span>
         </main>
-    
+
+        <div id="butu_sarasa">
+        ${butu_sarasa}
+    </div>
         <footer>
             <span>2023-02-07 Vardenis Pavardenis </span>
         </footer>
